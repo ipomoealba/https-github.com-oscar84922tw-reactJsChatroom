@@ -45,7 +45,7 @@ var TodoApp3 = React.createClass({
     var ref = new Firebase(this.props.fire_url);
     var _this = this;
 
-    var tokenGenerator = new FirebaseTokenGenerator("AO7JEdjjajFMQCwUNrGD75gZJ4zSFslZMSXoVq9V");
+    var tokenGenerator = new FirebaseTokenGenerator("lC2aiFqqqvQMNgfD1vOw9W1HyFp5orxWX3a8QWJO");
     var token = tokenGenerator.createToken({uid: Date.now().toString()});
     ref.authWithCustomToken(token, function(error, authData) {
       if (error) {
@@ -140,6 +140,6 @@ var scrollTop = function(){
 }
 
 ReactDOM.render(
-  <TodoApp3 fire_url="https://radiant-heat-9084.firebaseio.com/comments" />, 
+  <TodoApp3 fire_url="https://radiant-heat-9084.firebaseio.com/" />, 
   document.getElementById('content')
 );

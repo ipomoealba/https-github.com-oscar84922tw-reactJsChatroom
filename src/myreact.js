@@ -140,6 +140,6 @@ var scrollTop = function(){
 }
 
 ReactDOM.render(
-  <TodoApp3 fire_url="https://radiant-heat-9084.firebaseio.com/" />, 
+  <TodoApp3 fire_url="https://radiant-heat-9084.firebaseio.com/comments/" />, 
   document.getElementById('content')
 );

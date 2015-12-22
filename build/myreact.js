@@ -208,4 +208,4 @@ var scrollTop = function () {
   document.body.scrollTop = 9999999;
 };
 
-ReactDOM.render(React.createElement(TodoApp3, { fire_url: 'https://radiant-heat-9084.firebaseio.com/comments/' }), document.getElementById('content'));
+ReactDOM.render(React.createElement(TodoApp3, { fire_url: 'https://radiant-heat-9084.firebaseio.com' }), document.getElementById('content'));

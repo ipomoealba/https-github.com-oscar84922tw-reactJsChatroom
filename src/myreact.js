@@ -5,6 +5,8 @@ var TodoList3 = React.createClass({
     var createItem = function(item, index) {
       item.label = item.label || 'info';
       var className = "name label label-" + item.label;
+       
+       //物件發生時間
       var date = new Date(item.date);
       item.date = date.getFullYear() + '/' + parseInt(date.getMonth()+1) + '/' + date.getDate() 
                   + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
@@ -23,7 +25,7 @@ var TodoList3 = React.createClass({
 
 var TodoApp3 = React.createClass({
   mixins: [ReactFireMixin],
-
+  //mount 
   getInitialState: function() {
     return {
       items: [],
@@ -37,9 +39,6 @@ var TodoApp3 = React.createClass({
     scrollTop();
   },
 
-  // componentWillUpdate: function() {
-  //   console.log('aa');
-  // },
 
   componentWillMount: function() {
     var ref = new Firebase(this.props.fire_url);
@@ -67,11 +66,6 @@ var TodoApp3 = React.createClass({
 
   onChangeLabel: function(e){
     this.setState({label:e.target.value});
-  },
-
-  removeItem: function(key) {
-    var ref = new Firebase(this.props.fire_url);
-    ref.child(key).remove();
   },
 
   handleSubmit: function(e) {
@@ -105,7 +99,7 @@ var TodoApp3 = React.createClass({
     };
     return (
       <div>
-        <TodoList3 items={ this.state.items } removeItem={ this.removeItem } />
+        <TodoList3 items={ this.state.items } />
         <hr/>
         <div className="row">
           <form className="form-inline" onSubmit={ this.handleSubmit }>
